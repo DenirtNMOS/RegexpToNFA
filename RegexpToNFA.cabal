@@ -1,0 +1,32 @@
+cabal-version:      3.0
+name:               RegexpToNFA
+version:            0.1.0.0
+license:            BSD-3-Clause
+license-file:       LICENSE
+author:             Denirt
+maintainer:         denisovart05@gmail.com
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+
+common warnings
+    ghc-options: -Wall
+
+library
+    import:           warnings
+    exposed-modules:  Parser,
+                      Glushkov,
+                      Latex,
+    hs-source-dirs:   src
+    build-depends:    base ^>=4.18.3.0,
+                      parsec >= 3.1.0,
+                      containers >= 0.6.7,
+    default-language: Haskell2010
+
+executable RegexpToNFA
+    import:           warnings
+    main-is:          Main.hs
+    hs-source-dirs:   app
+    build-depends:    base ^>=4.18.3.0,
+                      containers >= 0.6.7,
+                      RegexpToNFA
+    default-language: Haskell2010
